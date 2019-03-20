@@ -786,3 +786,23 @@ Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 71.62.55.208 at 2019-03-20 14:18:44 +0000
 Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 71.62.55.208 at 2019-03-20 14:18:44 +0000
 Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 71.62.55.208 at 2019-03-20 14:18:44 +0000
+Started PATCH "/posts/1" for 71.62.55.208 at 2019-03-20 14:19:14 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PVcrHgOkL9YSEx7zOEhOw3HI9QQVvVkuRRR3qwW725Yi/Z+ty9rgalK+RU1fQSymYUCOZqQic5uYTZkGuIHIbw==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"asdasjkl"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2019-03-20 14:19:14.701699"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:49617/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/1" for 71.62.55.208 at 2019-03-20 14:19:14 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
